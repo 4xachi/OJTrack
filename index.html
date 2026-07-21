@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OJTrack — The Ultimate OJT & Internship Hour Tracker</title>
+  <meta name="description"
+    content="OJTrack is a 100% offline-first, high-precision OJT & Internship hours tracker with Philippine Holiday 2.0x double-hours logic, AI note polishing, and 1-tap supervisor PDF reports.">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Ambient Background Orbs -->
+  <div class="bg-orbs-wrapper">
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+  </div>
+
+  <!-- Glass Navbar -->
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="#" class="nav-brand">
+          <img src="assets/logo.png" alt="OJTrack Logo">
+          <span>OJTrack</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about">About</a></li>
+          <li><a href="#mission">Mission & Vision</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#calculator">Calculator</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li class="mobile-cta-item">
+            <a href="#download" class="btn btn-primary btn-full">
+              <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              <span>Download APK</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="nav-right">
+          <a href="#download" class="btn btn-primary btn-nav-desktop">
+            <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            <span>Download APK</span>
+          </a>
+          <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero-title">
+        Master Your OJT Journey <br>
+        <span>With Precision & Ease</span>
+      </h1>
+      <p class="hero-subtitle">
+        Say goodbye to manual spreadsheets and lost hours. OJTrack is the 100% offline-first, ultra-fluid tracking app
+        built for students and interns to log shifts, calculate completion dates, and generate supervisor reports in
+        seconds.
+      </p>
+      <div class="hero-cta">
+        <a href="#download" class="btn btn-primary">
+          <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+          <span>Download APK (v1.0)</span>
+        </a>
+        <a href="#calculator" class="btn btn-secondary">Calculate Finish Date</a>
+      </div>
+
+      <!-- Hero Glass Showcase -->
+      <div class="hero-showcase glass-panel">
+        <div class="showcase-header">
+          <div class="brand-badge">
+            <img src="assets/logo.png" alt="OJTrack">
+            <div>
+              <strong style="color: var(--text-primary); font-size: 1.1rem;">ABC Company OJT Progress</strong>
+            </div>
+          </div>
+          <div class="btn btn-secondary" style="padding: 6px 14px; font-size: 0.82rem;">Target: 500.0 Hours</div>
+        </div>
+        <div class="showcase-grid">
+          <div class="mini-card">
+            <h4>Completed Hours</h4>
+            <div class="val" style="color: var(--emerald-success);">128.0 hrs</div>
+          </div>
+          <div class="mini-card">
+            <h4>Remaining Target</h4>
+            <div class="val">372.0 hrs</div>
+          </div>
+          <div class="mini-card">
+            <h4>Est. Completion Date</h4>
+            <div class="val" style="color: var(--primary-teal); font-size: 1.15rem;">October 2, 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Problem vs Solution Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Why OJTrack?</span>
+        <h2 class="section-title">Built to Eliminate Internship Headaches</h2>
+        <p class="section-desc">Traditional logging in notebooks or spreadsheets is tedious, error-prone, and easy to
+          forget. OJTrack turns paperwork into a smooth 1-tap experience.</p>
+      </div>
+
+      <div class="comparison-grid">
+        <div class="comp-card problem glass-panel">
+          <h3 style="color: #ef4444;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="15" y1="9" x2="9" y2="15" />
+              <line x1="9" y1="9" x2="15" y2="15" />
+            </svg>
+            <span>Traditional Spreadsheet Tracking</span>
+          </h3>
+          <ul class="comp-list">
+            <li>
+              <svg class="list-icon-warning" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b"
+                stroke-width="2">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                <line x1="12" y1="9" x2="12" y2="13" />
+                <line x1="12" y1="17" x2="12.01" y2="17" />
+              </svg>
+              <span>Disappearing spreadsheet files and unbacked-up log sheets</span>
+            </li>
+            <li>
+              <svg class="list-icon-warning" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b"
+                stroke-width="2">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                <line x1="12" y1="9" x2="12" y2="13" />
+                <line x1="12" y1="17" x2="12.01" y2="17" />
+              </svg>
+              <span>Manual calculations for overtime, breaks, and holiday credits</span>
+            </li>
+            <li>
+              <svg class="list-icon-warning" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b"
+                stroke-width="2">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                <line x1="12" y1="9" x2="12" y2="13" />
+                <line x1="12" y1="17" x2="12.01" y2="17" />
+              </svg>
+              <span>Scrambling every Friday to format reports for advisers</span>
+            </li>
+            <li>
+              <svg class="list-icon-warning" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b"
+                stroke-width="2">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                <line x1="12" y1="9" x2="12" y2="13" />
+                <line x1="12" y1="17" x2="12.01" y2="17" />
+              </svg>
+              <span>Requires constant internet connection or complex cloud logins</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="comp-card solution glass-panel">
+          <h3 style="color: var(--primary-teal);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary-teal)" stroke-width="2.2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+            <span>The OJTrack Solution</span>
+          </h3>
+          <ul class="comp-list">
+            <li>
+              <svg class="list-icon-check" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="var(--emerald-success)" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span>100% Offline-First local database—zero internet or cloud required</span>
+            </li>
+            <li>
+              <svg class="list-icon-check" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="var(--emerald-success)" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span>Automated 2.0x Philippine Holiday double-hours calculation</span>
+            </li>
+            <li>
+              <svg class="list-icon-check" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="var(--emerald-success)" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span>AI-powered daily notes polisher for supervisor-ready phrasing</span>
+            </li>
+            <li>
+              <svg class="list-icon-check" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="var(--emerald-success)" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span>Instant 1-tap PDF summary export for university submission</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission, Vision & Goal Section -->
+  <section id="mission" class="section" style="background: rgba(255, 255, 255, 0.015);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Core Principles</span>
+        <h2 class="section-title">Our Mission, Vision & Goal</h2>
+        <p class="section-desc">Empowering students to focus on career learning rather than administrative paperwork.
+        </p>
+      </div>
+
+      <div class="mvg-grid">
+        <div class="mvg-card glass-panel">
+          <div class="mvg-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-teal)" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <circle cx="12" cy="12" r="6" />
+              <circle cx="12" cy="12" r="2" />
+            </svg>
+          </div>
+          <h3>Our Mission</h3>
+          <p>To provide interns and students with an effortless, privacy-focused tool that eliminates manual hour
+            tracking and ensures accurate graduation reporting.</p>
+        </div>
+
+        <div class="mvg-card glass-panel">
+          <div class="mvg-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-teal)" stroke-width="2">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+          </div>
+          <h3>Our Vision</h3>
+          <p>To become the gold standard digital companion for on-the-job training, recognized by universities and
+            industry partners worldwide.</p>
+        </div>
+
+        <div class="mvg-card glass-panel">
+          <div class="mvg-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-teal)" stroke-width="2">
+              <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+              <line x1="4" y1="22" x2="4" y2="15" />
+            </svg>
+          </div>
+          <h3>Our Goal</h3>
+          <p>To guarantee 100% reliability, zero-lag performance, and seamless shift logging for every student across
+            all mobile devices.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Showcase Grid -->
+  <section id="features" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Powerful Capabilities</span>
+        <h2 class="section-title">Designed for Ultimate Efficiency</h2>
+        <p class="section-desc">Every feature is crafted to maximize performance and simplify your daily OJT workflow.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card glass-panel">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-teal)" stroke-width="2">
+              <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
+              <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
+              <line x1="6" y1="6" x2="6.01" y2="6" />
+              <line x1="6" y1="18" x2="6.01" y2="18" />
+            </svg>
+          </div>
+          <h3>100% Offline First</h3>
+          <p>All data is stored locally on your device. Works flawlessly in basement offices, remote sites, or
+            zero-signal environments.</p>
+        </div>
+
+        <div class="feature-card glass-panel">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-teal)" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" />
+            </svg>
+          </div>
+          <h3>Holiday 2.0x Double Hours</h3>
+          <p>Automatically credits 2.0x double hours when logging shifts on official national holidays, matching labor
+            standards.</p>
+        </div>
+
+        <div class="feature-card glass-panel">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-teal)" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+            </svg>
+          </div>
+          <h3>120 FPS Native Engine</h3>
+          <p>Optimized with hardware-isolated paint layers to guarantee buttery-smooth 120 FPS scrolling on all
+            low-to-high end devices.</p>
+        </div>
+
+        <div class="feature-card glass-panel">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-teal)" stroke-width="2">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+          </div>
+          <h3>AI Log Polisher</h3>
+          <p>Converts informal daily notes into executive, supervisor-ready phrasing with optional Gemini AI
+            integration.</p>
+        </div>
+
+        <div class="feature-card glass-panel">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-teal)" stroke-width="2">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+              <polyline points="17 6 23 6 23 12" />
+            </svg>
+          </div>
+          <h3>Pace Predictor Engine</h3>
+          <p>Calculates rolling daily average pace and dynamically projects your exact estimated completion date.</p>
+        </div>
+
+        <div class="feature-card glass-panel">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-teal)" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+            </svg>
+          </div>
+          <h3>1-Tap Report Export</h3>
+          <p>Generate formal weekly and monthly accomplishment reports ready for coordinator signature and submission.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive OJT Calculator -->
+  <section id="calculator" class="section" style="background: rgba(255, 255, 255, 0.015);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Interactive Tool</span>
+        <h2 class="section-title">Calculate Your OJT Finish Date</h2>
+        <p class="section-desc">Estimate when you will complete your required internship hours based on your shift
+          schedule.</p>
+      </div>
+
+      <div class="calc-card glass-panel">
+        <div class="calc-form">
+          <div class="form-group">
+            <label for="reqHours">Required Total Hours</label>
+            <input type="number" id="reqHours" value="500" min="10" max="2000">
+          </div>
+          <div class="form-group">
+            <label for="loggedHours">Hours Completed So Far</label>
+            <input type="number" id="loggedHours" value="0" min="0" max="2000">
+          </div>
+          <div class="form-group">
+            <label for="dailyHours">Daily Shift Length (Hours/Day)</label>
+            <input type="number" id="dailyHours" value="8" min="1" max="24" step="0.5">
+          </div>
+          <div class="form-group">
+            <label for="workDays">Work Schedule</label>
+            <select id="workDays">
+              <option value="5" selected>Mon – Fri (5 Days/Week)</option>
+              <option value="6">Mon – Sat (6 Days/Week)</option>
+              <option value="7">Everyday (7 Days/Week)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="calc-result">
+          <h4>Estimated Completion Date</h4>
+          <div class="date-val" id="resFinishDate">Calculating...</div>
+          <div class="workday-val" id="resRemainingDays">...</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Got Questions?</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item glass-panel active">
+          <div class="faq-question">
+            <span>Does OJTrack require an active internet connection?</span>
+            <span class="faq-toggle">
+              <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.2">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </span>
+          </div>
+          <div class="faq-answer">
+            No! OJTrack is built 100% offline-first using local device storage. You can log shifts, view timelines, and
+            calculate progress without internet access.
+          </div>
+        </div>
+
+        <div class="faq-item glass-panel">
+          <div class="faq-question">
+            <span>How does the Philippine Holiday double-hours calculation work?</span>
+            <span class="faq-toggle">
+              <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.2">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </span>
+          </div>
+          <div class="faq-answer">
+            When you log a shift under the "Holiday" status, OJTrack automatically applies a 2.0x multiplier to your
+            worked hours (e.g., 8 hours worked on a holiday credits 16 completed hours toward your target).
+          </div>
+        </div>
+
+        <div class="faq-item glass-panel">
+          <div class="faq-question">
+            <span>Is my OJT data secure and private?</span>
+            <span class="faq-toggle">
+              <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.2">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </span>
+          </div>
+          <div class="faq-answer">
+            Yes! All your log entries, notes, and profile data remain strictly on your local device database. No
+            personal logs are uploaded to any external server.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download App Section -->
+  <section id="download" class="section">
+    <div class="container">
+      <div class="calc-card glass-panel"
+        style="text-align: center; background: linear-gradient(135deg, rgba(6, 182, 212, 0.12) 0%, rgba(99, 102, 241, 0.12) 100%); border-color: rgba(6, 182, 212, 0.4);">
+        <div style="display: flex; justify-content: center; margin-bottom: 16px;">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--primary-teal)" stroke-width="2">
+            <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+            <line x1="12" y1="18" x2="12.01" y2="18" />
+          </svg>
+        </div>
+        <h2 class="section-title" style="margin-bottom: 12px;">Get OJTrack for Android</h2>
+        <p class="section-desc" style="max-width: 540px; margin: 0 auto 28px;">
+          Start tracking your OJT shift hours, calculating completion dates, and generating supervisor PDF reports 100%
+          offline.
+        </p>
+        <a href="assets/OJTrack.apk" download="OJTrack.apk" class="btn btn-primary"
+          style="font-size: 1.05rem; padding: 14px 34px;">
+          <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+          <span>Download Official APK</span>
+        </a>
+        <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 16px;">
+          Version 1.0.0 • Android 5.0+ • 100% Free & Offline
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="OJTrack">
+          <span style="font-weight: 700; font-size: 1.1rem;">OJTrack</span>
+        </div>
+        <div class="footer-copy">
+          © 2026 OJTrack. All rights reserved. J Estrada.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
