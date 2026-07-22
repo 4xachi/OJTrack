@@ -234,6 +234,10 @@ button {
   color: var(--text-primary);
 }
 
+.nav-cta-item {
+  margin-left: 8px;
+}
+
 .nav-actions {
   display: flex;
   align-items: center;
@@ -482,37 +486,314 @@ button {
   object-fit: contain;
 }
 
+.app-brand-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-company-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .app-title {
-  font-size: 1.05rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.app-date-sub {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--primary-cyan);
+}
+
+.app-fab-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-full);
+  background: rgba(6, 182, 212, 0.15);
+  border: 1px solid rgba(6, 182, 212, 0.35);
+  color: var(--primary-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 16px rgba(6, 182, 212, 0.25);
+  transition: var(--transition-fast);
+}
+
+.app-fab-btn:hover {
+  background: rgba(6, 182, 212, 0.25);
+  transform: scale(1.05);
+}
+
+/* Flutter App Cards General */
+.app-card {
+  background: rgba(15, 22, 36, 0.75);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+/* Card 1: Progress Summary Card */
+.progress-summary-card {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.progress-summary-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.progress-stat-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-indicator-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.dot-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+}
+
+.dot-completed { background: var(--emerald-success); box-shadow: 0 0 8px var(--emerald-success); }
+.dot-remaining { background: var(--primary-cyan); box-shadow: 0 0 8px var(--primary-cyan); }
+
+.stat-main-val {
+  font-size: 1.15rem;
   font-weight: 700;
 }
 
-.app-subtitle {
+.stat-divider-line {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 10px 0;
+}
+
+/* Card 2: Estimated Finish Date Card */
+.finish-date-card {
+  border-color: rgba(6, 182, 212, 0.3);
+}
+
+.card-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.card-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+.status-chip-on-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(6, 182, 212, 0.15);
+  border: 1px solid rgba(6, 182, 212, 0.35);
+  color: var(--primary-cyan);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.finish-date-display {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.finish-date-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+}
+
+.finish-date-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--primary-cyan);
+  font-weight: 600;
+}
+
+/* Card 3: Weekly Hours Card */
+.card-title {
+  font-size: 0.98rem;
+  font-weight: 700;
+}
+
+.target-badge {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.weekly-bar-chart {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 90px;
+  padding-top: 12px;
+  gap: 8px;
+}
+
+.bar-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.bar-fill {
+  width: 100%;
+  max-width: 24px;
+  background: linear-gradient(180deg, var(--primary-cyan), rgba(6, 182, 212, 0.4));
+  border-radius: 4px;
+  transition: height 0.4s ease-out;
+}
+
+.bar-col.rest .bar-fill {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.bar-day {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+/* Timeline Stepper */
+.timeline-stepper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.step-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.step-completed .step-icon {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: rgba(16, 185, 129, 0.3);
+  color: var(--emerald-success);
+}
+
+.step-active .step-icon {
+  background: rgba(6, 182, 212, 0.2);
+  border-color: rgba(6, 182, 212, 0.4);
+  color: var(--primary-cyan);
+}
+
+.step-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.step-name {
+  font-size: 0.88rem;
+}
+
+.step-date {
   font-size: 0.78rem;
   color: var(--text-secondary);
 }
 
-.app-streak-chip {
+/* Floating Glass Bottom Navigation Bar */
+.app-bottom-nav {
   display: flex;
+  justify-content: space-around;
   align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
+  background: rgba(11, 15, 25, 0.85);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius-full);
-  background: rgba(245, 158, 11, 0.15);
-  border: 1px solid rgba(245, 158, 11, 0.3);
-  color: var(--amber-warning);
-  font-size: 0.8rem;
-  font-weight: 700;
+  padding: 8px 12px;
+  margin-top: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.app-tabs-nav {
+.app-nav-item {
   display: flex;
-  gap: 8px;
-  background: rgba(6, 8, 13, 0.6);
-  padding: 6px;
-  border-radius: var(--radius-sm);
-  margin-bottom: 24px;
-  overflow-x: auto;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  transition: var(--transition-fast);
+  cursor: pointer;
+}
+
+.app-nav-item:hover {
+  color: var(--text-primary);
+}
+
+.app-nav-item.active {
+  background: rgba(6, 182, 212, 0.18);
+  border: 1px solid rgba(6, 182, 212, 0.4);
+  color: var(--primary-cyan);
+}
+
+.nav-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-label {
+  font-size: 0.72rem;
+  font-weight: 600;
 }
 
 .app-tab-btn {
@@ -1371,32 +1652,297 @@ button {
   background: var(--emerald-success);
 }
 
-/* Mobile Responsive */
-@media (max-width: 992px) {
-  .dashboard-hero-card { grid-template-columns: 1fr; text-align: center; }
-  .calculator-card-glass { grid-template-columns: 1fr; }
-  .bento-grid { grid-template-columns: 1fr; }
-  .card-large { grid-column: span 1; }
-  .comparison-grid { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr; }
+/* Comprehensive Mobile & Tablet Responsive Engine */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .dashboard-hero-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .calculator-card-glass {
+    grid-template-columns: 1fr;
+    padding: 32px 24px;
+  }
+
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card-large {
+    grid-column: span 2;
+  }
+
+  .comparison-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (max-width: 768px) {
-  .nav-links { display: none; }
+  .container {
+    padding: 0 16px;
+  }
+
+  .header-fixed {
+    top: 10px;
+  }
+
+  .navbar-pill {
+    padding: 8px 14px;
+    position: relative;
+    max-width: 100%;
+  }
+
+  .brand-logo {
+    gap: 8px;
+  }
+
+  .brand-name {
+    font-size: 1.05rem;
+  }
+
+  .version-badge {
+    font-size: 0.65rem;
+    padding: 2px 6px;
+  }
+
+  .btn-nav-cta {
+    padding: 8px 14px;
+    font-size: 0.82rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
   .nav-links.active {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 60px;
+    top: calc(100% + 10px);
     left: 0;
     right: 0;
-    background: rgba(11, 15, 25, 0.95);
-    backdrop-filter: blur(20px);
-    padding: 20px;
+    width: 100%;
+    background: rgba(11, 15, 25, 0.97);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    padding: 20px 18px;
     border-radius: var(--radius-md);
     border: 1px solid var(--glass-border);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    gap: 12px;
   }
-  .mobile-toggle { display: flex; }
-  .shift-details-grid { grid-template-columns: 1fr 1fr; }
-  .mini-grid { grid-template-columns: 1fr; }
+
+  .nav-links.active .nav-item {
+    font-size: 1rem;
+    padding: 10px 0;
+    display: block;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .nav-cta-item {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 6px;
+  }
+
+  .nav-cta-item .btn-nav-cta {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+
+  .mobile-toggle {
+    display: flex;
+  }
+
+  .hero-section {
+    padding-top: 110px;
+    padding-bottom: 40px;
+  }
+
+  .hero-headline {
+    font-size: clamp(2rem, 7vw, 3.2rem);
+  }
+
+  .hero-subtext {
+    font-size: 0.98rem;
+    padding: 0 8px;
+    margin-bottom: 28px;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Hardware Device Frame Showcase */
+  .app-interface {
+    padding: 16px;
+  }
+
+  .app-header-bar {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .app-tabs-nav {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 4px;
+    gap: 6px;
+  }
+
+  .app-tabs-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .app-tab-btn {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+
+  .shift-details-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .mini-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cal-month-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  /* Bento Grid */
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-large {
+    grid-column: span 1;
+  }
+
+  .bento-card {
+    padding: 24px 20px;
+  }
+
+  /* Calculator Section */
+  .calculator-card-glass {
+    padding: 24px 16px;
+    gap: 24px;
+  }
+
+  .calc-results-col {
+    padding: 20px 16px;
+  }
+
+  .result-date-display {
+    font-size: clamp(1.4rem, 6vw, 2.2rem);
+  }
+
+  /* Comparison & Download Cards */
+  .comp-box {
+    padding: 24px 20px;
+  }
+
+  .download-card-glass {
+    padding: 36px 20px;
+  }
+
+  .download-meta-list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 12px;
+  }
+
+  .header-fixed {
+    top: 8px;
+  }
+
+  .navbar-pill {
+    padding: 6px 10px;
+    gap: 6px;
+  }
+
+  .logo-icon-wrapper {
+    width: 28px;
+    height: 28px;
+  }
+
+  .brand-name {
+    font-size: 0.95rem;
+  }
+
+  .version-badge {
+    display: none;
+  }
+
+  .nav-actions {
+    gap: 6px;
+  }
+
+  .hero-headline {
+    font-size: 1.85rem;
+  }
+
+  .shift-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .result-stats-row {
+    grid-template-columns: 1fr;
+  }
+
+  .pdf-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .progress-summary-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
+  }
 }

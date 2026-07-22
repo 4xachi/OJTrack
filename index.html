@@ -51,19 +51,20 @@
           <li><a href="#superpowers" class="nav-item">Superpowers</a></li>
           <li><a href="#comparison" class="nav-item">Why OJTrack</a></li>
           <li><a href="#faq" class="nav-item">FAQ</a></li>
+          <li class="nav-cta-item">
+            <a href="assets/OJTrack.apk" download class="btn btn-emerald btn-nav-cta">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              <span>Download APK</span>
+            </a>
+          </li>
         </ul>
 
         <div class="nav-actions">
-          <a href="assets/OJTrack.apk" download class="btn btn-emerald btn-nav-cta">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-              <polyline points="7 10 12 15 17 10" />
-              <line x1="12" y1="15" x2="12" y2="3" />
-            </svg>
-            <span>Download APK</span>
-          </a>
-
           <button class="mobile-toggle" id="menuToggle" aria-label="Toggle Mobile Menu">
             <span></span>
             <span></span>
@@ -121,145 +122,104 @@
           </div>
 
           <div class="app-interface">
-            <!-- App Bar -->
+            <!-- App Bar matching Flutter Mobile UI -->
             <div class="app-header-bar">
               <div class="app-brand">
                 <img src="assets/logo.png" alt="OJTrack Mini Logo" class="app-mini-logo">
-                <div>
-                  <h4 class="app-title">ABC Tech Solutions</h4>
-                  <span class="app-subtitle">Software Engineering Intern</span>
+                <div class="app-brand-info">
+                  <span class="app-company-tag">DASCA</span>
+                  <h3 class="app-title">OJT Progress</h3>
+                  <span class="app-date-sub">Thursday, Jul 23, 2026</span>
                 </div>
               </div>
-              <div class="app-streak-chip">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="#f59e0b" stroke="none">
-                  <path d="M12 2c0 0-6 4-6 10 0 3.3 2.7 6 6 6s6-2.7 6-6c0-6-6-10-6-10z" />
+              <button class="app-fab-btn" aria-label="Add Log">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                  <line x1="12" y1="5" x2="12" y2="19"/>
+                  <line x1="5" y1="12" x2="19" y2="12"/>
                 </svg>
-                <span>14 Day Streak</span>
-              </div>
-            </div>
-
-            <!-- App Tab Switcher -->
-            <div class="app-tabs-nav">
-              <button class="app-tab-btn active" data-tab="dashboard">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M3 3v18h18" />
-                  <path d="M18 17V9" />
-                  <path d="M13 17V5" />
-                  <path d="M8 17v-3" />
-                </svg>
-                Dashboard
-              </button>
-              <button class="app-tab-btn" data-tab="shiftlog">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="10" />
-                  <polyline points="12 6 12 12 16 14" />
-                </svg>
-                Shift Log
-              </button>
-              <button class="app-tab-btn" data-tab="calendar">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                  <line x1="16" y1="2" x2="16" y2="6" />
-                  <line x1="8" y1="2" x2="8" y2="6" />
-                  <line x1="3" y1="10" x2="21" y2="10" />
-                </svg>
-                Calendar
-              </button>
-              <button class="app-tab-btn" data-tab="report">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                  <polyline points="14 2 14 8 20 8" />
-                </svg>
-                PDF Export
               </button>
             </div>
 
-            <!-- Tab Content 1: Dashboard -->
-            <div class="tab-pane active" id="pane-dashboard">
-              <div class="dashboard-hero-card">
+            <!-- Tab Content 1: Home Dashboard -->
+            <div class="tab-pane active" id="pane-home">
+              <!-- Card 1: Completed / Remaining Hours Card -->
+              <div class="app-card progress-summary-card">
                 <div class="progress-ring-wrapper">
-                  <svg class="progress-ring" width="140" height="140" viewBox="0 0 140 140">
-                    <circle class="ring-bg" cx="70" cy="70" r="58" stroke-width="12" />
-                    <circle class="ring-stroke" cx="70" cy="70" r="58" stroke-width="12" stroke-dasharray="364.4"
-                      stroke-dashoffset="116.2" />
+                  <svg class="progress-ring" width="120" height="120" viewBox="0 0 120 120">
+                    <circle class="ring-bg" cx="60" cy="60" r="48" stroke-width="10" />
+                    <circle class="ring-stroke" cx="60" cy="60" r="48" stroke-width="10" stroke-dasharray="301.6"
+                      stroke-dashoffset="96.2" />
                   </svg>
                   <div class="ring-text">
                     <span class="percent-val">68.1%</span>
-                    <span class="percent-sub">Completed</span>
+                    <span class="percent-sub">Done</span>
                   </div>
                 </div>
 
-                <div class="dashboard-metrics">
-                  <div class="metric-row">
-                    <span class="m-label">Hours Logged:</span>
-                    <span class="m-val highlight-emerald">340.5 / 500.0 hrs</span>
+                <div class="progress-summary-details">
+                  <div class="progress-stat-group">
+                    <div class="stat-indicator-row">
+                      <span class="dot-indicator dot-completed"></span>
+                      <span class="stat-label">Completed</span>
+                    </div>
+                    <div class="stat-main-val">340.5 hrs</div>
                   </div>
-                  <div class="metric-row">
-                    <span class="m-label">Hours Remaining:</span>
-                    <span class="m-val">159.5 hrs</span>
+
+                  <div class="stat-divider-line"></div>
+
+                  <div class="progress-stat-group">
+                    <div class="stat-indicator-row">
+                      <span class="dot-indicator dot-remaining"></span>
+                      <span class="stat-label">Remaining</span>
+                    </div>
+                    <div class="stat-main-val highlight-cyan">159.5 / 500.0 hrs</div>
                   </div>
-                  <div class="metric-row">
-                    <span class="m-label">Estimated Finish:</span>
-                    <span class="m-val highlight-cyan">October 16, 2026</span>
-                  </div>
-                  <div class="pace-status-badge ahead">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                      stroke-width="2.5">
-                      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-                      <polyline points="17 6 23 6 23 12" />
+                </div>
+              </div>
+
+              <!-- Card 2: Estimated Finish Date Card -->
+              <div class="app-card finish-date-card">
+                <div class="card-header-row">
+                  <span class="card-eyebrow">ESTIMATED FINISH DATE</span>
+                  <span class="status-chip-on-track">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"/>
                     </svg>
-                    <span>⚡ 3 Workdays Ahead of Schedule (8.4h/day avg)</span>
-                  </div>
+                    On Track
+                  </span>
+                </div>
+                <h2 class="finish-date-display">September 20, 2026</h2>
+                <p class="finish-date-desc">You are right on track with your expected schedule!</p>
+                <div class="finish-date-footer">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--primary-cyan)" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                    <line x1="16" y1="2" x2="16" y2="6"/>
+                    <line x1="8" y1="2" x2="8" y2="6"/>
+                    <line x1="3" y1="10" x2="21" y2="10"/>
+                  </svg>
+                  <span>~63 workdays remaining at 8.0h/day pace</span>
                 </div>
               </div>
 
-              <div class="mini-grid">
-                <div class="mini-stat-card">
-                  <span class="stat-title">Regular Hours</span>
-                  <span class="stat-val">312.0 hrs</span>
+              <!-- Card 3: This Week's Hours Chart Card -->
+              <div class="app-card weekly-hours-card">
+                <div class="card-header-row">
+                  <h4 class="card-title">This Week's Hours</h4>
+                  <span class="target-badge">Target: 8.0h/day</span>
                 </div>
-                <div class="mini-stat-card">
-                  <span class="stat-title">Holiday 2.0x Credits</span>
-                  <span class="stat-val highlight-cyan">+16.0 hrs</span>
-                </div>
-                <div class="mini-stat-card">
-                  <span class="stat-title">Overtime Logged</span>
-                  <span class="stat-val highlight-emerald">+12.5 hrs</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Tab Content 2: Shift Log -->
-            <div class="tab-pane" id="pane-shiftlog">
-              <div class="shift-entry-card">
-                <div class="shift-card-header">
-                  <div>
-                    <strong class="shift-date">Today, July 23, 2026</strong>
-                    <span class="badge-holiday">🇵🇭 Independence Day (Double Hours 2.0x)</span>
-                  </div>
-                  <span class="shift-total-badge">16.0 hrs credited</span>
-                </div>
-                <div class="shift-details-grid">
-                  <div class="detail-item"><span class="d-lbl">Time In</span><span class="d-val">08:00 AM</span></div>
-                  <div class="detail-item"><span class="d-lbl">Lunch Break</span><span class="d-val">1.0 hr</span></div>
-                  <div class="detail-item"><span class="d-lbl">Time Out</span><span class="d-val">05:00 PM</span></div>
-                  <div class="detail-item"><span class="d-lbl">Multiplier</span><span class="d-val highlight-cyan">2.0x
-                      Holiday</span></div>
-                </div>
-                <div class="ai-note-box">
-                  <div class="ai-note-header">
-                    <span class="ai-badge">✨ Gemini AI Polished Note</span>
-                    <button class="btn-micro">Re-Polish</button>
-                  </div>
-                  <p class="ai-note-text">
-                    "Developed responsive Flutter UI widgets, refactored state management using Riverpod providers, and
-                    executed unit tests for completion math logic."
-                  </p>
+                <div class="weekly-bar-chart">
+                  <div class="bar-col"><div class="bar-fill" style="height: 85%;"></div><span class="bar-day">M</span></div>
+                  <div class="bar-col"><div class="bar-fill" style="height: 100%;"></div><span class="bar-day">T</span></div>
+                  <div class="bar-col"><div class="bar-fill" style="height: 90%;"></div><span class="bar-day">W</span></div>
+                  <div class="bar-col"><div class="bar-fill" style="height: 100%;"></div><span class="bar-day">T</span></div>
+                  <div class="bar-col"><div class="bar-fill" style="height: 75%;"></div><span class="bar-day">F</span></div>
+                  <div class="bar-col rest"><div class="bar-fill" style="height: 0%;"></div><span class="bar-day">S</span></div>
+                  <div class="bar-col rest"><div class="bar-fill" style="height: 0%;"></div><span class="bar-day">S</span></div>
                 </div>
               </div>
             </div>
 
-            <!-- Tab Content 3: Calendar -->
+            <!-- Tab Content 2: Calendar -->
             <div class="tab-pane" id="pane-calendar">
               <div class="calendar-preview-wrapper">
                 <div class="cal-month-header">
@@ -297,8 +257,78 @@
               </div>
             </div>
 
-            <!-- Tab Content 4: PDF Report -->
-            <div class="tab-pane" id="pane-report">
+            <!-- Tab Content 3: Logs -->
+            <div class="tab-pane" id="pane-logs">
+              <div class="shift-entry-card">
+                <div class="shift-card-header">
+                  <div>
+                    <strong class="shift-date">Today, July 23, 2026</strong>
+                    <span class="badge-holiday">🇵🇭 Independence Day (Double Hours 2.0x)</span>
+                  </div>
+                  <span class="shift-total-badge">16.0 hrs credited</span>
+                </div>
+                <div class="shift-details-grid">
+                  <div class="detail-item"><span class="d-lbl">Time In</span><span class="d-val">08:00 AM</span></div>
+                  <div class="detail-item"><span class="d-lbl">Lunch Break</span><span class="d-val">1.0 hr</span></div>
+                  <div class="detail-item"><span class="d-lbl">Time Out</span><span class="d-val">05:00 PM</span></div>
+                  <div class="detail-item"><span class="d-lbl">Multiplier</span><span class="d-val highlight-cyan">2.0x
+                      Holiday</span></div>
+                </div>
+                <div class="ai-note-box">
+                  <div class="ai-note-header">
+                    <span class="ai-badge">✨ Gemini AI Polished Note</span>
+                    <button class="btn-micro">Re-Polish</button>
+                  </div>
+                  <p class="ai-note-text">
+                    "Developed responsive Flutter UI widgets, refactored state management using Riverpod providers, and
+                    executed unit tests for completion math logic."
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab Content 4: Timeline -->
+            <div class="tab-pane" id="pane-timeline">
+              <div class="app-card timeline-preview-card">
+                <div class="card-header-row">
+                  <h4 class="card-title">Completion Timeline</h4>
+                  <span class="input-unit-badge">SQLite Engine</span>
+                </div>
+                <div class="timeline-stepper">
+                  <div class="step-item step-completed">
+                    <div class="step-icon">✓</div>
+                    <div class="step-info">
+                      <strong class="step-name">25% Milestone</strong>
+                      <span class="step-date">June 14, 2026 (125.0 hrs)</span>
+                    </div>
+                  </div>
+                  <div class="step-item step-completed">
+                    <div class="step-icon">✓</div>
+                    <div class="step-info">
+                      <strong class="step-name">50% Midterm Checkpoint</strong>
+                      <span class="step-date">July 08, 2026 (250.0 hrs)</span>
+                    </div>
+                  </div>
+                  <div class="step-item step-active">
+                    <div class="step-icon">⚡</div>
+                    <div class="step-info">
+                      <strong class="step-name">68.1% Current Pace</strong>
+                      <span class="step-date">Today, July 23, 2026 (340.5 hrs)</span>
+                    </div>
+                  </div>
+                  <div class="step-item step-future">
+                    <div class="step-icon">🎯</div>
+                    <div class="step-info">
+                      <strong class="step-name">100% Target Completion</strong>
+                      <span class="step-date highlight-cyan">Projected Sept 20, 2026</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab Content 5: Settings -->
+            <div class="tab-pane" id="pane-settings">
               <div class="pdf-preview-card">
                 <div class="pdf-header">
                   <div class="pdf-doc-title">
@@ -326,6 +356,64 @@
                 </button>
               </div>
             </div>
+
+            <!-- Curved Glass Floating Bottom Navigation Bar -->
+            <nav class="app-bottom-nav">
+              <button class="app-nav-item active" data-tab="home">
+                <div class="nav-icon-wrapper">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7" rx="1.5" />
+                    <rect x="14" y="3" width="7" height="7" rx="1.5" />
+                    <rect x="14" y="14" width="7" height="7" rx="1.5" />
+                    <rect x="3" y="14" width="7" height="7" rx="1.5" />
+                  </svg>
+                </div>
+                <span class="nav-label">Home</span>
+              </button>
+
+              <button class="app-nav-item" data-tab="calendar">
+                <div class="nav-icon-wrapper">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                    <line x1="16" y1="2" x2="16" y2="6" />
+                    <line x1="8" y1="2" x2="8" y2="6" />
+                    <line x1="3" y1="10" x2="21" y2="10" />
+                  </svg>
+                </div>
+                <span class="nav-label">Calendar</span>
+              </button>
+
+              <button class="app-nav-item" data-tab="logs">
+                <div class="nav-icon-wrapper">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+                    <rect x="8" y="2" width="8" height="4" rx="1" ry="1" />
+                    <line x1="9" y1="12" x2="15" y2="12" />
+                    <line x1="9" y1="16" x2="13" y2="16" />
+                  </svg>
+                </div>
+                <span class="nav-label">Logs</span>
+              </button>
+
+              <button class="app-nav-item" data-tab="timeline">
+                <div class="nav-icon-wrapper">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                  </svg>
+                </div>
+                <span class="nav-label">Timeline</span>
+              </button>
+
+              <button class="app-nav-item" data-tab="settings">
+                <div class="nav-icon-wrapper">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3" />
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                  </svg>
+                </div>
+                <span class="nav-label">Settings</span>
+              </button>
+            </nav>
 
           </div>
         </div>

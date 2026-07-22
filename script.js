@@ -15,14 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Interactive Device Frame App Tab Switcher
 function initAppTabs() {
-  const tabBtns = document.querySelectorAll('.app-tab-btn');
+  const navItems = document.querySelectorAll('.app-nav-item, .app-tab-btn');
   const tabPanes = document.querySelectorAll('.tab-pane');
 
-  tabBtns.forEach(btn => {
+  navItems.forEach(btn => {
     btn.addEventListener('click', () => {
       const targetTab = btn.getAttribute('data-tab');
 
-      tabBtns.forEach(b => b.classList.remove('active'));
+      navItems.forEach(b => b.classList.remove('active'));
       tabPanes.forEach(p => p.classList.remove('active'));
 
       btn.classList.add('active');
