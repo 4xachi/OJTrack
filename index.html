@@ -4,59 +4,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OJTrack — The Ultimate OJT & Internship Hour Tracker</title>
+  <title>OJTrack — Intelligent OJT & Internship Hour Tracker</title>
   <meta name="description"
-    content="OJTrack is a 100% offline-first, high-precision OJT & Internship hours tracker with Philippine Holiday 2.0x double-hours logic, AI note polishing, and 1-tap supervisor PDF reports.">
+    content="OJTrack is the 100% offline-first, high-precision OJT & Internship hours tracker with Philippine Holiday 2.0x logic, Gemini AI note polishing, and 1-tap supervisor PDF reports.">
+  <meta name="keywords"
+    content="OJT tracker, internship hours tracker, DTR generator, offline OJT app, Philippine holiday hours calculator">
+  <meta property="og:title" content="OJTrack — Know Your Progress. Know Your Finish.">
+  <meta property="og:description"
+    content="Offline-first OJT tracking companion with dynamic finish date projections and 1-tap supervisor PDF reports.">
+  <meta property="og:image" content="assets/logo.png">
+  <meta property="og:type" content="website">
+
   <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <!-- Ambient Background Orbs -->
-  <div class="bg-orbs-wrapper">
-    <div class="bg-orb orb-1"></div>
-    <div class="bg-orb orb-2"></div>
-    <div class="bg-orb orb-3"></div>
+  <!-- Ambient Background Lighting & Noise Overlay -->
+  <div class="ambient-light-wrapper">
+    <div class="glow-orb orb-primary"></div>
+    <div class="glow-orb orb-emerald"></div>
+    <div class="glow-orb orb-indigo"></div>
+    <div class="grid-pattern-overlay"></div>
   </div>
 
-  <!-- Glass Navbar -->
-  <header>
+  <!-- Header & Glass Pill Navbar -->
+  <header class="header-fixed">
     <div class="container">
-      <nav class="navbar">
-        <a href="#" class="nav-brand">
-          <img src="assets/logo.png" alt="OJTrack Logo">
-          <span>OJTrack</span>
+      <nav class="navbar-pill">
+        <a href="#" class="brand-logo">
+          <div class="logo-icon-wrapper">
+            <img src="assets/logo.png" alt="OJTrack Icon">
+          </div>
+          <span class="brand-name">OJTrack</span>
+          <span class="version-badge">v1.0</span>
         </a>
+
         <ul class="nav-links" id="navLinks">
-          <li><a href="#about">About</a></li>
-          <li><a href="#mission">Mission & Vision</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#calculator">Calculator</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li class="mobile-cta-item">
-            <a href="#download" class="btn btn-primary btn-full">
-              <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                <polyline points="7 10 12 15 17 10" />
-                <line x1="12" y1="15" x2="12" y2="3" />
-              </svg>
-              <span>Download APK</span>
-            </a>
-          </li>
+          <li><a href="#demo" class="nav-item">Live Demo</a></li>
+          <li><a href="#calculator" class="nav-item">Calculator</a></li>
+          <li><a href="#superpowers" class="nav-item">Superpowers</a></li>
+          <li><a href="#comparison" class="nav-item">Why OJTrack</a></li>
+          <li><a href="#faq" class="nav-item">FAQ</a></li>
         </ul>
 
-        <div class="nav-right">
-          <a href="#download" class="btn btn-primary btn-nav-desktop">
-            <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <div class="nav-actions">
+          <a href="assets/OJTrack.apk" download class="btn btn-emerald btn-nav-cta">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
               <polyline points="7 10 12 15 17 10" />
               <line x1="12" y1="15" x2="12" y2="3" />
             </svg>
             <span>Download APK</span>
           </a>
-          <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+
+          <button class="mobile-toggle" id="menuToggle" aria-label="Toggle Mobile Menu">
             <span></span>
             <span></span>
             <span></span>
@@ -67,450 +75,633 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero-section">
     <div class="container">
-      <h1 class="hero-title">
-        Master Your OJT Journey <br>
-        <span>With Precision & Ease</span>
+
+      <h1 class="hero-headline">
+        Know Your Progress.<br>
+        <span class="gradient-text">Know Your Finish.</span>
       </h1>
-      <p class="hero-subtitle">
-        Say goodbye to manual spreadsheets and lost hours. OJTrack is the 100% offline-first, ultra-fluid tracking app
-        built for students and interns to log shifts, calculate completion dates, and generate supervisor reports in
-        seconds.
+
+      <p class="hero-subtext">
+        Eliminate manual spreadsheets and lost hours. OJTrack is the ultra-precise, offline-first OJT hours companion
+        engineered for students and interns to track shifts, calculate exact finish dates, and generate 1-tap supervisor
+        PDF reports.
       </p>
-      <div class="hero-cta">
-        <a href="#download" class="btn btn-primary">
-          <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+
+      <div class="hero-cta-group">
+        <a href="assets/OJTrack.apk" download class="btn btn-primary btn-hero">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
             <polyline points="7 10 12 15 17 10" />
             <line x1="12" y1="15" x2="12" y2="3" />
           </svg>
-          <span>Download APK (v1.0)</span>
+          <div class="btn-hero-text">
+            <span class="btn-label">Download Android APK</span>
+          </div>
         </a>
-        <a href="#calculator" class="btn btn-secondary">Calculate Finish Date</a>
+
+        <a href="#calculator" class="btn btn-glass btn-hero">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="4" y="2" width="16" height="20" rx="2" />
+            <line x1="8" y1="6" x2="16" y2="6" />
+            <line x1="16" y1="14" x2="16" y2="18" />
+            <path d="M16 10h.01M12 10h.01M8 10h.01M12 14h.01M8 14h.01M12 18h.01M8 18h.01" />
+          </svg>
+          <span>Calculate Finish Date</span>
+        </a>
       </div>
 
-      <!-- Hero Glass Showcase -->
-      <div class="hero-showcase glass-panel">
-        <div class="showcase-header">
-          <div class="brand-badge">
-            <img src="assets/logo.png" alt="OJTrack">
-            <div>
-              <strong style="color: var(--text-primary); font-size: 1.1rem;">ABC Company OJT Progress</strong>
+      <!-- Interactive Hardware App Showcase -->
+      <div id="demo" class="app-showcase-container">
+        <div class="device-frame-glass">
+          <div class="device-top-notch">
+            <span class="camera-lens"></span>
+            <span class="speaker-grille"></span>
+          </div>
+
+          <div class="app-interface">
+            <!-- App Bar -->
+            <div class="app-header-bar">
+              <div class="app-brand">
+                <img src="assets/logo.png" alt="OJTrack Mini Logo" class="app-mini-logo">
+                <div>
+                  <h4 class="app-title">ABC Tech Solutions</h4>
+                  <span class="app-subtitle">Software Engineering Intern</span>
+                </div>
+              </div>
+              <div class="app-streak-chip">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#f59e0b" stroke="none">
+                  <path d="M12 2c0 0-6 4-6 10 0 3.3 2.7 6 6 6s6-2.7 6-6c0-6-6-10-6-10z" />
+                </svg>
+                <span>14 Day Streak</span>
+              </div>
+            </div>
+
+            <!-- App Tab Switcher -->
+            <div class="app-tabs-nav">
+              <button class="app-tab-btn active" data-tab="dashboard">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 3v18h18" />
+                  <path d="M18 17V9" />
+                  <path d="M13 17V5" />
+                  <path d="M8 17v-3" />
+                </svg>
+                Dashboard
+              </button>
+              <button class="app-tab-btn" data-tab="shiftlog">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+                Shift Log
+              </button>
+              <button class="app-tab-btn" data-tab="calendar">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
+                Calendar
+              </button>
+              <button class="app-tab-btn" data-tab="report">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                  <polyline points="14 2 14 8 20 8" />
+                </svg>
+                PDF Export
+              </button>
+            </div>
+
+            <!-- Tab Content 1: Dashboard -->
+            <div class="tab-pane active" id="pane-dashboard">
+              <div class="dashboard-hero-card">
+                <div class="progress-ring-wrapper">
+                  <svg class="progress-ring" width="140" height="140" viewBox="0 0 140 140">
+                    <circle class="ring-bg" cx="70" cy="70" r="58" stroke-width="12" />
+                    <circle class="ring-stroke" cx="70" cy="70" r="58" stroke-width="12" stroke-dasharray="364.4"
+                      stroke-dashoffset="116.2" />
+                  </svg>
+                  <div class="ring-text">
+                    <span class="percent-val">68.1%</span>
+                    <span class="percent-sub">Completed</span>
+                  </div>
+                </div>
+
+                <div class="dashboard-metrics">
+                  <div class="metric-row">
+                    <span class="m-label">Hours Logged:</span>
+                    <span class="m-val highlight-emerald">340.5 / 500.0 hrs</span>
+                  </div>
+                  <div class="metric-row">
+                    <span class="m-label">Hours Remaining:</span>
+                    <span class="m-val">159.5 hrs</span>
+                  </div>
+                  <div class="metric-row">
+                    <span class="m-label">Estimated Finish:</span>
+                    <span class="m-val highlight-cyan">October 16, 2026</span>
+                  </div>
+                  <div class="pace-status-badge ahead">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                      <polyline points="17 6 23 6 23 12" />
+                    </svg>
+                    <span>⚡ 3 Workdays Ahead of Schedule (8.4h/day avg)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mini-grid">
+                <div class="mini-stat-card">
+                  <span class="stat-title">Regular Hours</span>
+                  <span class="stat-val">312.0 hrs</span>
+                </div>
+                <div class="mini-stat-card">
+                  <span class="stat-title">Holiday 2.0x Credits</span>
+                  <span class="stat-val highlight-cyan">+16.0 hrs</span>
+                </div>
+                <div class="mini-stat-card">
+                  <span class="stat-title">Overtime Logged</span>
+                  <span class="stat-val highlight-emerald">+12.5 hrs</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab Content 2: Shift Log -->
+            <div class="tab-pane" id="pane-shiftlog">
+              <div class="shift-entry-card">
+                <div class="shift-card-header">
+                  <div>
+                    <strong class="shift-date">Today, July 23, 2026</strong>
+                    <span class="badge-holiday">🇵🇭 Independence Day (Double Hours 2.0x)</span>
+                  </div>
+                  <span class="shift-total-badge">16.0 hrs credited</span>
+                </div>
+                <div class="shift-details-grid">
+                  <div class="detail-item"><span class="d-lbl">Time In</span><span class="d-val">08:00 AM</span></div>
+                  <div class="detail-item"><span class="d-lbl">Lunch Break</span><span class="d-val">1.0 hr</span></div>
+                  <div class="detail-item"><span class="d-lbl">Time Out</span><span class="d-val">05:00 PM</span></div>
+                  <div class="detail-item"><span class="d-lbl">Multiplier</span><span class="d-val highlight-cyan">2.0x
+                      Holiday</span></div>
+                </div>
+                <div class="ai-note-box">
+                  <div class="ai-note-header">
+                    <span class="ai-badge">✨ Gemini AI Polished Note</span>
+                    <button class="btn-micro">Re-Polish</button>
+                  </div>
+                  <p class="ai-note-text">
+                    "Developed responsive Flutter UI widgets, refactored state management using Riverpod providers, and
+                    executed unit tests for completion math logic."
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab Content 3: Calendar -->
+            <div class="tab-pane" id="pane-calendar">
+              <div class="calendar-preview-wrapper">
+                <div class="cal-month-header">
+                  <strong class="month-title">July 2026</strong>
+                  <div class="cal-legend">
+                    <span class="leg-item leg-done">Completed</span>
+                    <span class="leg-item leg-proj">Projected Finish</span>
+                  </div>
+                </div>
+                <div class="cal-grid-mini">
+                  <span class="day-head">M</span><span class="day-head">T</span><span class="day-head">W</span><span
+                    class="day-head">T</span><span class="day-head">F</span><span class="day-head">S</span><span
+                    class="day-head">S</span>
+                  <span class="day-cell muted">29</span><span class="day-cell muted">30</span><span
+                    class="day-cell done">1</span><span class="day-cell done">2</span><span
+                    class="day-cell done">3</span><span class="day-cell rest">4</span><span
+                    class="day-cell rest">5</span>
+                  <span class="day-cell done">6</span><span class="day-cell done">7</span><span
+                    class="day-cell done">8</span><span class="day-cell done">9</span><span
+                    class="day-cell done">10</span><span class="day-cell rest">11</span><span
+                    class="day-cell rest">12</span>
+                  <span class="day-cell done">13</span><span class="day-cell done">14</span><span
+                    class="day-cell done">15</span><span class="day-cell done">16</span><span
+                    class="day-cell done">17</span><span class="day-cell rest">18</span><span
+                    class="day-cell rest">19</span>
+                  <span class="day-cell done">20</span><span class="day-cell done">21</span><span
+                    class="day-cell done">22</span><span class="day-cell today">23</span><span
+                    class="day-cell future">24</span><span class="day-cell rest">25</span><span
+                    class="day-cell rest">26</span>
+                  <span class="day-cell future">27</span><span class="day-cell future">28</span><span
+                    class="day-cell future">29</span><span class="day-cell future">30</span><span
+                    class="day-cell future">31</span><span class="day-cell muted">1</span><span
+                    class="day-cell muted">2</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab Content 4: PDF Report -->
+            <div class="tab-pane" id="pane-report">
+              <div class="pdf-preview-card">
+                <div class="pdf-header">
+                  <div class="pdf-doc-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--emerald-success)"
+                      stroke-width="2">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                      <polyline points="14 2 14 8 20 8" />
+                    </svg>
+                    <span>OFFICIAL DTR SUMMARY REPORT.pdf</span>
+                  </div>
+                  <span class="pdf-status-pill">Ready for Advisor Signature</span>
+                </div>
+                <div class="pdf-body-stub">
+                  <div class="stub-line wide"></div>
+                  <div class="stub-line medium"></div>
+                  <div class="stub-table">
+                    <div class="stub-row"><span>Total Hours Rendered:</span><strong>340.5 hrs</strong></div>
+                    <div class="stub-row"><span>Verified Days Present:</span><strong>42 days</strong></div>
+                    <div class="stub-row"><span>Supervisor Approval Status:</span><strong
+                        class="highlight-emerald">VERIFIED (100%)</strong></div>
+                  </div>
+                </div>
+                <button class="btn btn-emerald btn-full" style="margin-top: 12px; font-size: 0.85rem;">
+                  <span>Export 1-Tap PDF Report</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive OJT Calculator Section -->
+  <section id="calculator" class="section calc-section">
+    <div class="container">
+      <div class="section-intro">
+        <span class="section-pill-tag">LIVE SIMULATION ENGINE</span>
+        <h2 class="section-heading">Calculate Your Exact Finish Date</h2>
+        <p class="section-subtext">
+          Input your remaining internship requirements below. Our mathematical engine simulates non-working weekends and
+          daily shift averages to project your accurate completion date.
+        </p>
+      </div>
+
+      <div class="calculator-card-glass">
+        <div class="calc-inputs-col">
+          <div class="input-group">
+            <div class="input-label-row">
+              <label for="reqHours">Required Total Hours</label>
+              <span class="input-unit-badge">Target</span>
+            </div>
+            <input type="number" id="reqHours" value="500" min="1" max="5000" step="5" class="glass-input">
+          </div>
+
+          <div class="input-group">
+            <div class="input-label-row">
+              <label for="loggedHours">Hours Completed So Far</label>
+              <span class="input-unit-badge">Logged</span>
+            </div>
+            <input type="number" id="loggedHours" value="185" min="0" max="5000" step="1" class="glass-input">
+          </div>
+
+          <div class="input-group">
+            <div class="input-label-row">
+              <label for="dailyHours">Average Daily Shift Length</label>
+              <span class="input-unit-badge" id="dailyHoursVal">8.0 hrs/day</span>
+            </div>
+            <input type="range" id="dailyHours" value="8" min="4" max="12" step="0.5" class="glass-range">
+          </div>
+
+          <div class="input-group">
+            <div class="input-label-row">
+              <label for="workDays">Working Schedule</label>
+              <span class="input-unit-badge">Days/Week</span>
+            </div>
+            <select id="workDays" class="glass-select">
+              <option value="5" selected>5 Days / Week (Monday – Friday)</option>
+              <option value="6">6 Days / Week (Monday – Saturday)</option>
+              <option value="7">7 Days / Week (Everyday)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="calc-results-col">
+          <div class="result-box-hero">
+            <span class="result-eyebrow">Projected Finish Date</span>
+            <div class="result-date-display" id="resFinishDate">Loading calculation...</div>
+            <p class="result-subtext" id="resRemainingDays">Computing remaining workdays...</p>
+          </div>
+
+          <div class="progress-calc-bar-wrapper">
+            <div class="progress-calc-meta">
+              <span>Overall Progress</span>
+              <strong id="resPercentageText">37.0%</strong>
+            </div>
+            <div class="calc-bar-track">
+              <div class="calc-bar-fill" id="resBarFill" style="width: 37%;"></div>
             </div>
           </div>
-          <div class="btn btn-secondary" style="padding: 6px 14px; font-size: 0.82rem;">Target: 500.0 Hours</div>
-        </div>
-        <div class="showcase-grid">
-          <div class="mini-card">
-            <h4>Completed Hours</h4>
-            <div class="val" style="color: var(--emerald-success);">128.0 hrs</div>
-          </div>
-          <div class="mini-card">
-            <h4>Remaining Target</h4>
-            <div class="val">372.0 hrs</div>
-          </div>
-          <div class="mini-card">
-            <h4>Est. Completion Date</h4>
-            <div class="val" style="color: var(--primary-teal); font-size: 1.15rem;">October 2, 2026</div>
+
+          <div class="result-stats-row">
+            <div class="res-stat-item">
+              <span class="lbl">Remaining Hours</span>
+              <strong class="val" id="resRemainingHours">315.0 hrs</strong>
+            </div>
+            <div class="res-stat-item">
+              <span class="lbl">Estimated Workdays</span>
+              <strong class="val highlight-cyan" id="resWorkdaysNeeded">~40 days</strong>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About / Problem vs Solution Section -->
-  <section id="about" class="section">
+  <!-- Superpowers Bento Grid Section -->
+  <section id="superpowers" class="section">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Why OJTrack?</span>
-        <h2 class="section-title">Built to Eliminate Internship Headaches</h2>
-        <p class="section-desc">Traditional logging in notebooks or spreadsheets is tedious, error-prone, and easy to
-          forget. OJTrack turns paperwork into a smooth 1-tap experience.</p>
+      <div class="section-intro">
+        <span class="section-pill-tag">ENGINEERED FOR STUDENTS</span>
+        <h2 class="section-heading">5 Superpowers Built Into OJTrack</h2>
+        <p class="section-subtext">Everything you need to master your internship documentation without stress or manual
+          errors.</p>
       </div>
 
-      <div class="comparison-grid">
-        <div class="comp-card problem glass-panel">
-          <h3 style="color: #ef4444;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10" />
-              <line x1="15" y1="9" x2="9" y2="15" />
-              <line x1="9" y1="9" x2="15" y2="15" />
-            </svg>
-            <span>Traditional Spreadsheet Tracking</span>
-          </h3>
-          <ul class="comp-list">
-            <li>
-              <svg class="list-icon-warning" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b"
-                stroke-width="2">
-                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
-                <line x1="12" y1="9" x2="12" y2="13" />
-                <line x1="12" y1="17" x2="12.01" y2="17" />
-              </svg>
-              <span>Disappearing spreadsheet files and unbacked-up log sheets</span>
-            </li>
-            <li>
-              <svg class="list-icon-warning" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b"
-                stroke-width="2">
-                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
-                <line x1="12" y1="9" x2="12" y2="13" />
-                <line x1="12" y1="17" x2="12.01" y2="17" />
-              </svg>
-              <span>Manual calculations for overtime, breaks, and holiday credits</span>
-            </li>
-            <li>
-              <svg class="list-icon-warning" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b"
-                stroke-width="2">
-                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
-                <line x1="12" y1="9" x2="12" y2="13" />
-                <line x1="12" y1="17" x2="12.01" y2="17" />
-              </svg>
-              <span>Scrambling every Friday to format reports for advisers</span>
-            </li>
-            <li>
-              <svg class="list-icon-warning" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b"
-                stroke-width="2">
-                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
-                <line x1="12" y1="9" x2="12" y2="13" />
-                <line x1="12" y1="17" x2="12.01" y2="17" />
-              </svg>
-              <span>Requires constant internet connection or complex cloud logins</span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="comp-card solution glass-panel">
-          <h3 style="color: var(--primary-teal);">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary-teal)" stroke-width="2.2">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-              <polyline points="22 4 12 14.01 9 11.01" />
-            </svg>
-            <span>The OJTrack Solution</span>
-          </h3>
-          <ul class="comp-list">
-            <li>
-              <svg class="list-icon-check" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                stroke="var(--emerald-success)" stroke-width="2.5">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              <span>100% Offline-First local database—zero internet or cloud required</span>
-            </li>
-            <li>
-              <svg class="list-icon-check" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                stroke="var(--emerald-success)" stroke-width="2.5">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              <span>Automated 2.0x Philippine Holiday double-hours calculation</span>
-            </li>
-            <li>
-              <svg class="list-icon-check" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                stroke="var(--emerald-success)" stroke-width="2.5">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              <span>AI-powered daily notes polisher for supervisor-ready phrasing</span>
-            </li>
-            <li>
-              <svg class="list-icon-check" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                stroke="var(--emerald-success)" stroke-width="2.5">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              <span>Instant 1-tap PDF summary export for university submission</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Mission, Vision & Goal Section -->
-  <section id="mission" class="section" style="background: rgba(255, 255, 255, 0.015);">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Core Principles</span>
-        <h2 class="section-title">Our Mission, Vision & Goal</h2>
-        <p class="section-desc">Empowering students to focus on career learning rather than administrative paperwork.
-        </p>
-      </div>
-
-      <div class="mvg-grid">
-        <div class="mvg-card glass-panel">
-          <div class="mvg-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-teal)" stroke-width="2">
-              <circle cx="12" cy="12" r="10" />
-              <circle cx="12" cy="12" r="6" />
-              <circle cx="12" cy="12" r="2" />
-            </svg>
+      <div class="bento-grid">
+        <!-- Bento Card 1 (Large 2 Cols) -->
+        <div class="bento-card card-large">
+          <div class="bento-badge">01 • CORE ENGINE</div>
+          <h3 class="bento-title">Dynamic Rolling Pace & Completion Simulator</h3>
+          <p class="bento-desc">
+            Never guess when your internship ends. OJTrack calculates your real rolling daily average, factors in
+            scheduled rest days, and flags whether you are ahead or behind your required target date.
+          </p>
+          <div class="bento-preview-box">
+            <div class="pace-sim-row">
+              <span>Rolling Average Pace:</span>
+              <strong class="highlight-emerald">8.4 hrs/day</strong>
+            </div>
+            <div class="pace-sim-row">
+              <span>Schedule Variance:</span>
+              <strong class="highlight-cyan">+3.5 Days Ahead of Deadline</strong>
+            </div>
           </div>
-          <h3>Our Mission</h3>
-          <p>To provide interns and students with an effortless, privacy-focused tool that eliminates manual hour
-            tracking and ensures accurate graduation reporting.</p>
         </div>
 
-        <div class="mvg-card glass-panel">
-          <div class="mvg-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-teal)" stroke-width="2">
-              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-              <circle cx="12" cy="12" r="3" />
-            </svg>
-          </div>
-          <h3>Our Vision</h3>
-          <p>To become the gold standard digital companion for on-the-job training, recognized by universities and
-            industry partners worldwide.</p>
+        <!-- Bento Card 2 -->
+        <div class="bento-card">
+          <div class="bento-badge">02 • LOCALIZATION</div>
+          <h3 class="bento-title">Philippine Holiday 2.0x Double Hours Engine</h3>
+          <p class="bento-desc">
+            Working on Regular Holidays or Special Non-Working Days? OJTrack automatically applies 2.0x double hours or
+            1.3x multipliers so your credits match official school policy.
+          </p>
         </div>
 
-        <div class="mvg-card glass-panel">
-          <div class="mvg-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-teal)" stroke-width="2">
-              <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
-              <line x1="4" y1="22" x2="4" y2="15" />
-            </svg>
-          </div>
-          <h3>Our Goal</h3>
-          <p>To guarantee 100% reliability, zero-lag performance, and seamless shift logging for every student across
-            all mobile devices.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Features Showcase Grid -->
-  <section id="features" class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Powerful Capabilities</span>
-        <h2 class="section-title">Designed for Ultimate Efficiency</h2>
-        <p class="section-desc">Every feature is crafted to maximize performance and simplify your daily OJT workflow.
-        </p>
-      </div>
-
-      <div class="features-grid">
-        <div class="feature-card glass-panel">
-          <div class="feature-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-teal)" stroke-width="2">
-              <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
-              <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
-              <line x1="6" y1="6" x2="6.01" y2="6" />
-              <line x1="6" y1="18" x2="6.01" y2="18" />
-            </svg>
-          </div>
-          <h3>100% Offline First</h3>
-          <p>All data is stored locally on your device. Works flawlessly in basement offices, remote sites, or
-            zero-signal environments.</p>
+        <!-- Bento Card 3 -->
+        <div class="bento-card">
+          <div class="bento-badge">03 • PRIVACY</div>
+          <h3 class="bento-title">100% Offline-First SQLite (Drift) Database</h3>
+          <p class="bento-desc">
+            No mandatory cloud logins, zero server downtime, zero privacy leaks. All your daily shift logs, notes, and
+            records are stored securely on your local device.
+          </p>
         </div>
 
-        <div class="feature-card glass-panel">
-          <div class="feature-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-teal)" stroke-width="2">
-              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-              <line x1="16" y1="2" x2="16" y2="6" />
-              <line x1="8" y1="2" x2="8" y2="6" />
-              <line x1="3" y1="10" x2="21" y2="10" />
-            </svg>
+        <!-- Bento Card 4 (Large 2 Cols) -->
+        <div class="bento-card card-large">
+          <div class="bento-badge">04 • AI INTEGRATION</div>
+          <h3 class="bento-title">Gemini AI Shift Note Polisher</h3>
+          <p class="bento-desc">
+            Turn quick informal shift notes ("fixed bugs and tested buttons") into polished, formal task descriptions
+            formatted for academic coordinator reviews in one tap.
+          </p>
+          <div class="bento-ai-demo">
+            <div class="raw-note">Raw: "helped lead dev test login flow and clean database"</div>
+            <div class="arrow-down">↓ Gemini AI Polish</div>
+            <div class="polished-note">"Assisted Senior Engineer in QA testing authentication flows and optimizing local
+              SQLite database schemas."</div>
           </div>
-          <h3>Holiday 2.0x Double Hours</h3>
-          <p>Automatically credits 2.0x double hours when logging shifts on official national holidays, matching labor
-            standards.</p>
         </div>
 
-        <div class="feature-card glass-panel">
-          <div class="feature-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-teal)" stroke-width="2">
-              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-            </svg>
-          </div>
-          <h3>120 FPS Native Engine</h3>
-          <p>Optimized with hardware-isolated paint layers to guarantee buttery-smooth 120 FPS scrolling on all
-            low-to-high end devices.</p>
-        </div>
-
-        <div class="feature-card glass-panel">
-          <div class="feature-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-teal)" stroke-width="2">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-            </svg>
-          </div>
-          <h3>AI Log Polisher</h3>
-          <p>Converts informal daily notes into executive, supervisor-ready phrasing with optional Gemini AI
-            integration.</p>
-        </div>
-
-        <div class="feature-card glass-panel">
-          <div class="feature-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-teal)" stroke-width="2">
-              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-              <polyline points="17 6 23 6 23 12" />
-            </svg>
-          </div>
-          <h3>Pace Predictor Engine</h3>
-          <p>Calculates rolling daily average pace and dynamically projects your exact estimated completion date.</p>
-        </div>
-
-        <div class="feature-card glass-panel">
-          <div class="feature-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-teal)" stroke-width="2">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-              <polyline points="14 2 14 8 20 8" />
-              <line x1="16" y1="13" x2="8" y2="13" />
-              <line x1="16" y1="17" x2="8" y2="17" />
-            </svg>
-          </div>
-          <h3>1-Tap Report Export</h3>
-          <p>Generate formal weekly and monthly accomplishment reports ready for coordinator signature and submission.
+        <!-- Bento Card 5 -->
+        <div class="bento-card">
+          <div class="bento-badge">05 • REPORTING</div>
+          <h3 class="bento-title">1-Tap Supervisor DTR PDF Export</h3>
+          <p class="bento-desc">
+            Generate clean, professional Daily Time Record (DTR) PDF summaries complete with signature lines, attendance
+            tallies, and daily breakdown tables.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Interactive OJT Calculator -->
-  <section id="calculator" class="section" style="background: rgba(255, 255, 255, 0.015);">
+  <!-- Problem vs Solution Section -->
+  <section id="comparison" class="section">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Interactive Tool</span>
-        <h2 class="section-title">Calculate Your OJT Finish Date</h2>
-        <p class="section-desc">Estimate when you will complete your required internship hours based on your shift
-          schedule.</p>
+      <div class="section-intro">
+        <span class="section-pill-tag">THE DIFFERENCE</span>
+        <h2 class="section-heading">Why Students Switch To OJTrack</h2>
       </div>
 
-      <div class="calc-card glass-panel">
-        <div class="calc-form">
-          <div class="form-group">
-            <label for="reqHours">Required Total Hours</label>
-            <input type="number" id="reqHours" value="500" min="10" max="2000">
-          </div>
-          <div class="form-group">
-            <label for="loggedHours">Hours Completed So Far</label>
-            <input type="number" id="loggedHours" value="0" min="0" max="2000">
-          </div>
-          <div class="form-group">
-            <label for="dailyHours">Daily Shift Length (Hours/Day)</label>
-            <input type="number" id="dailyHours" value="8" min="1" max="24" step="0.5">
-          </div>
-          <div class="form-group">
-            <label for="workDays">Work Schedule</label>
-            <select id="workDays">
-              <option value="5" selected>Mon – Fri (5 Days/Week)</option>
-              <option value="6">Mon – Sat (6 Days/Week)</option>
-              <option value="7">Everyday (7 Days/Week)</option>
-            </select>
-          </div>
+      <div class="comparison-grid">
+        <div class="comp-box problem-box">
+          <h3 class="comp-box-title problem-title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.2">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="15" y1="9" x2="9" y2="15" />
+              <line x1="9" y1="9" x2="15" y2="15" />
+            </svg>
+            Traditional Spreadsheet & Paper Logs
+          </h3>
+          <ul class="comp-list">
+            <li><span>❌ Manual math errors when calculating overtime and lunch breaks</span></li>
+            <li><span>❌ Forgot to write down hours and lost track of total remaining</span></li>
+            <li><span>❌ Scrambling on Friday night to type up DTR reports for advisers</span></li>
+            <li><span>❌ Risk of losing unbacked spreadsheet files or damaged paper log sheets</span></li>
+            <li><span>❌ No automatic double-time crediting for official Philippine holidays</span></li>
+          </ul>
         </div>
 
-        <div class="calc-result">
-          <h4>Estimated Completion Date</h4>
-          <div class="date-val" id="resFinishDate">Calculating...</div>
-          <div class="workday-val" id="resRemainingDays">...</div>
+        <div class="comp-box solution-box">
+          <h3 class="comp-box-title solution-title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--emerald-success)"
+              stroke-width="2.2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+            The OJTrack Advantage
+          </h3>
+          <ul class="comp-list">
+            <li><span>✅ 100% automated precision hours tracking & lunch break deductions</span></li>
+            <li><span>✅ Instant projected finish date updated every time you clock in</span></li>
+            <li><span>✅ 1-Tap PDF export formatted for coordinator signatures</span></li>
+            <li><span>✅ 100% offline local SQLite persistence—never loses a single log</span></li>
+            <li><span>✅ Built-in Philippine Holiday 2.0x double hours calculator</span></li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ Section -->
+  <!-- FAQ Accordion Section -->
   <section id="faq" class="section">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Got Questions?</span>
-        <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="section-intro">
+        <span class="section-pill-tag">FREQUENTLY ASKED QUESTIONS</span>
+        <h2 class="section-heading">Everything You Need To Know</h2>
       </div>
 
-      <div class="faq-list">
-        <div class="faq-item glass-panel active">
-          <div class="faq-question">
-            <span>Does OJTrack require an active internet connection?</span>
-            <span class="faq-toggle">
-              <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2.2">
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-            </span>
-          </div>
+      <div class="faq-accordion">
+        <div class="faq-item active">
+          <button class="faq-question">
+            <span>Is OJTrack 100% free and offline?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
           <div class="faq-answer">
-            No! OJTrack is built 100% offline-first using local device storage. You can log shifts, view timelines, and
-            calculate progress without internet access.
+            <p>Yes! OJTrack is completely offline-first. Your data is stored locally in an encrypted SQLite database on
+              your mobile device. You don't need an internet connection to log shifts, check finish dates, or generate
+              PDF reports.</p>
           </div>
         </div>
 
-        <div class="faq-item glass-panel">
-          <div class="faq-question">
-            <span>How does the Philippine Holiday double-hours calculation work?</span>
-            <span class="faq-toggle">
-              <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2.2">
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-            </span>
-          </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How does the Philippine Holiday 2.0x double hours logic work?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
           <div class="faq-answer">
-            When you log a shift under the "Holiday" status, OJTrack automatically applies a 2.0x multiplier to your
-            worked hours (e.g., 8 hours worked on a holiday credits 16 completed hours toward your target).
+            <p>When you log a shift on an official Philippine Regular Holiday (e.g. Independence Day, Labor Day),
+              OJTrack automatically prompts you to apply the 2.0x multiplier, crediting double hours toward your total
+              OJT requirement as permitted by school guidelines.</p>
           </div>
         </div>
 
-        <div class="faq-item glass-panel">
-          <div class="faq-question">
-            <span>Is my OJT data secure and private?</span>
-            <span class="faq-toggle">
-              <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2.2">
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-            </span>
-          </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can I export reports for my school coordinator or supervisor?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
           <div class="faq-answer">
-            Yes! All your log entries, notes, and profile data remain strictly on your local device database. No
-            personal logs are uploaded to any external server.
+            <p>Absolutely. With one tap, OJTrack compiles your logged shifts, total rendered hours, attendance streak,
+              and AI-polished descriptions into a clean, official DTR PDF ready for printing or email submission.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Which operating systems are supported?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>OJTrack is built using Flutter and Dart. You can download the production Android APK directly from this
+              page today. iOS and Web versions are also supported in the codebase.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Download App Section -->
-  <section id="download" class="section">
+  <!-- Download CTA Section -->
+  <section class="section download-section">
     <div class="container">
-      <div class="calc-card glass-panel"
-        style="text-align: center; background: linear-gradient(135deg, rgba(6, 182, 212, 0.12) 0%, rgba(99, 102, 241, 0.12) 100%); border-color: rgba(6, 182, 212, 0.4);">
-        <div style="display: flex; justify-content: center; margin-bottom: 16px;">
-          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--primary-teal)" stroke-width="2">
-            <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
-            <line x1="12" y1="18" x2="12.01" y2="18" />
-          </svg>
-        </div>
-        <h2 class="section-title" style="margin-bottom: 12px;">Get OJTrack for Android</h2>
-        <p class="section-desc" style="max-width: 540px; margin: 0 auto 28px;">
-          Start tracking your OJT shift hours, calculating completion dates, and generating supervisor PDF reports 100%
-          offline.
-        </p>
-        <a href="https://github.com/4xachi/OJTrack/releases/download/v1.0.0/OJTrack.apk" download class="btn btn-primary"
-          style="font-size: 1.05rem; padding: 14px 34px;">
-          <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-            <polyline points="7 10 12 15 17 10" />
-            <line x1="12" y1="15" x2="12" y2="3" />
-          </svg>
-          <span>Download Official APK</span>
-        </a>
-        <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 16px;">
-          Version 1.0.0 • Android 5.0+ • 100% Free & Offline
+      <div class="download-card-glass">
+        <div class="download-content">
+          <div class="download-badge">READY FOR PRODUCTION</div>
+          <h2 class="download-title">Start Tracking Your OJT Hours Today</h2>
+          <p class="download-desc">
+            Download the official OJTrack Android APK v1.0 directly to your mobile device and experience effortless
+            internship tracking.
+          </p>
+
+          <div class="download-meta-list">
+            <div class="meta-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--emerald-success)"
+                stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span>Verified Clean Build (64.0 MB)</span>
+            </div>
+            <div class="meta-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--emerald-success)"
+                stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span>Offline SQLite Storage</span>
+            </div>
+            <div class="meta-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--emerald-success)"
+                stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span>Android 8.0+ Compatible</span>
+            </div>
+          </div>
+
+          <div class="download-btn-group">
+            <a href="assets/OJTrack.apk" download class="btn btn-primary btn-lg">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              <span>Download OJTrack</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer>
+  <footer class="site-footer">
     <div class="container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <img src="assets/logo.png" alt="OJTrack">
-          <span style="font-weight: 700; font-size: 1.1rem;">OJTrack</span>
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <a href="#" class="brand-logo">
+            <img src="assets/logo.png" alt="OJTrack Footer Logo" class="app-mini-logo">
+            <span class="brand-name">OJTrack</span>
+          </a>
+          <p class="footer-text">
+            Know Your Progress. Know Your Finish. The high-precision, offline-first OJT tracking companion for students.
+          </p>
         </div>
-        <div class="footer-copy">
-          © 2026 OJTrack. All rights reserved. J Estrada.
+
+        <div class="footer-col">
+          <h5 class="footer-heading">Navigation</h5>
+          <ul class="footer-links">
+            <li><a href="#demo">Live Demo</a></li>
+            <li><a href="#calculator">Completion Calculator</a></li>
+            <li><a href="#superpowers">Superpowers</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
         </div>
+
+        <div class="footer-col">
+          <h5 class="footer-heading">Features</h5>
+          <ul class="footer-links">
+            <li><span>Offline SQLite Engine</span></li>
+            <li><span>Philippine Holiday 2.0x</span></li>
+            <li><span>Gemini AI Note Polish</span></li>
+            <li><span>Supervisor DTR PDF</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 OJTrack. J Estrada.</p>
       </div>
     </div>
   </footer>
