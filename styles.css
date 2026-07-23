@@ -234,8 +234,8 @@ button {
   color: var(--text-primary);
 }
 
-.nav-cta-item {
-  margin-left: 8px;
+.mobile-menu-cta {
+  display: none;
 }
 
 .nav-actions {
@@ -1713,11 +1713,6 @@ button {
     padding: 2px 6px;
   }
 
-  .btn-nav-cta {
-    padding: 8px 14px;
-    font-size: 0.82rem;
-  }
-
   .nav-links {
     display: none;
   }
@@ -1748,17 +1743,13 @@ button {
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   }
 
-  .nav-cta-item {
-    width: 100%;
-    margin-left: 0;
-    margin-top: 6px;
+  .nav-actions .btn-nav-cta {
+    display: none;
   }
 
-  .nav-cta-item .btn-nav-cta {
-    width: 100%;
-    justify-content: center;
-    padding: 12px 20px;
-    font-size: 0.9rem;
+  .mobile-menu-cta {
+    display: block;
+    margin-top: 6px;
   }
 
   .mobile-toggle {
